@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   twitterwipe:
-    image: dantebarba/twitterwipe:latest
+    build: .
     container_name: twitterwipe
     environment:
       APP_KEY: ${APP_KEY}
@@ -11,7 +11,7 @@ services:
       CONSUMER_SECRET: ${CONSUMER_SECRET}
       COMMAND: ${COMMAND}
       ARGS: ${ARGS}
-      TZ: 'America/Argentina/Buenos_Aires'
+      TZ: ${TZ}
     volumes:
       - ./keys.json:/twitterwipe/keys.json
       - ./like.js:/twitterwipe/like.js

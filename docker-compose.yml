@@ -1,0 +1,20 @@
+version: '3.6'
+
+services:
+  twitterwipe:
+    image: dantebarba/twitterwipe:latest
+    container_name: twitterwipe
+    environment:
+      APP_KEY: ${APP_KEY}
+      APP_SECRET: ${APP_SECRET}
+      CONSUMER_KEY: ${CONSUMER_KEY}
+      CONSUMER_SECRET: ${CONSUMER_SECRET}
+      COMMAND: ${COMMAND}
+      ARGS: ${ARGS}
+      TZ: 'America/Argentina/Buenos_Aires'
+    volumes:
+      - ./keys.json:/twitterwipe/keys.json
+      - ./like.js:/twitterwipe/like.js
+      - ./tweet.js:/twitterwipe/tweet.js
+      - ./config.yaml:/twitterwipe/config.yaml
+      - ./log.log:/twitterwipe/log.log

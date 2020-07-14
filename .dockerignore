@@ -4,4 +4,8 @@ log.log
 config.yaml
 tweet.js
 like.js
+docker-compose.yml
+Dockerfile
 .env
+log.log
+.gitignore
